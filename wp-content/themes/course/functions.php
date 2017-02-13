@@ -180,4 +180,14 @@ function my_theme_slug_add_post_formats_to_page(){
     register_taxonomy_for_object_type( 'post_format', 'page' );
 }
 
+/**
+ * @return bool|string
+ * Get Url from link href
+ */
+function get_href_url()
+{
+    if (!preg_match('/<a\s[^>]*?href=[\'"](.+?)[\'"]/is', get_the_content(), $matches))
+        return false;
 
+    return esc_url_raw($matches[1]);
+}
