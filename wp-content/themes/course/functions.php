@@ -43,9 +43,11 @@ function course_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'course' ),
-	) );
+    register_nav_menus( array(
+        'menu-1' => esc_html__( 'Primary', 'course' ),
+        'footer-menu' => 'Меню в футере',
+        'widget-menu' => 'Меню для виджета',
+    ) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -169,4 +171,13 @@ require get_template_directory() . '/inc/jetpack.php';
  * Add post formats
  */
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'chat', 'audio' ) );
+
+// add post-formats to post_type 'page'
+add_action('init', 'my_theme_slug_add_post_formats_to_page', 11);
+
+function my_theme_slug_add_post_formats_to_page(){
+    add_post_type_support( 'page', 'post-formats' );
+    register_taxonomy_for_object_type( 'post_format', 'page' );
+}
+
 

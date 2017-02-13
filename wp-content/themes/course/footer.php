@@ -14,6 +14,15 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+        <?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'menu_class' => 'footer-menu' ) ); ?>
+
+        <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+            <div id="secondary" class="widget-area" role="complementary">
+                <?php dynamic_sidebar( 'sidebar-2' ); ?>
+            </div>
+        <?php endif; ?>
+
+
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'course' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'course' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
@@ -22,11 +31,7 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
-	<div id="secondary" class="widget-area" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-2' ); ?>
-	</div>
-<?php endif; ?>
+
 
 <?php wp_footer(); ?>
 
