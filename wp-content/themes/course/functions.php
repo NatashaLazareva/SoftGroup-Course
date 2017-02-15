@@ -221,13 +221,32 @@ function course_register_theme_customizer( $wp_customize ) {
     );
 
     // Add new section
-        $wp_customize->add_section(
-            'course_display_options',
-            array(
-                'title'     => 'Display Options',
-                'priority'  => 200
-            )
-        );
+    $wp_customize->add_section(
+        'course_display_options',
+        array(
+            'title'     => 'New Option',
+            'priority'  => 200
+        )
+    );
+
+    //Add settings
+    $wp_customize->add_setting(
+        'course_new_settings',
+        array(
+            'section' => 'course_display_options',
+            'default'     => true,
+            'transport'   => 'postMessage',
+        )
+    );
+    // add control
+    $wp_customize->add_control(
+        'course_new_settings',
+        array(
+            'label'      => 'New Course Option',
+            'section'    => 'course_display_options',
+            'type'   => 'checkbox'
+        )
+    );
     }
 
 
