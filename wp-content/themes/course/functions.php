@@ -224,7 +224,7 @@ function course_register_theme_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'course_display_options',
         array(
-            'title'     => 'New Option',
+            'title'     => 'New Test Option',
             'priority'  => 200
         )
     );
@@ -234,7 +234,7 @@ function course_register_theme_customizer( $wp_customize ) {
         'course_new_settings',
         array(
             'section' => 'course_display_options',
-            'default'     => true,
+            'default'     => 'false',
             'transport'   => 'postMessage',
         )
     );
@@ -247,7 +247,170 @@ function course_register_theme_customizer( $wp_customize ) {
             'type'   => 'checkbox'
         )
     );
-    }
+
+    //add Social Icons Settings Section
+    $wp_customize->add_section(
+        'social-network-settings',
+        array(
+            'title' => 'Social Networks Settings',
+            'priority' => '201'
+        )
+    );
+
+
+    //add settings
+    $wp_customize->add_setting(
+        'social-icon-1',
+        array(
+            'section' => 'social-network-settings',
+            'transport' => 'postMessage'
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'social-icon-1',
+            array(
+                'label' => 'Upload social icon',
+                'section' => 'social-network-settings',
+                'settings' => 'social-icon-1'
+            )
+        )
+    );
+
+
+    $wp_customize->add_setting(
+      'social-link-1',
+        array(
+            'section' => 'social-network-settings',
+            'transport' => 'postMessage'
+        )
+    );
+
+    $wp_customize->add_control(
+        'social-link-1',
+        array(
+            'label'      => 'Social Network Link',
+            'section'    => 'social-network-settings',
+            'type'   => 'url'
+        )
+    );
+
+    //add settings
+    $wp_customize->add_setting(
+        'social-icon-2',
+        array(
+            'section' => 'social-network-settings',
+            'transport' => 'postMessage'
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'social-icon-2',
+            array(
+                'label' => 'Upload social icon',
+                'section' => 'social-network-settings',
+                'settings' => 'social-icon-2'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'social-link-2',
+        array(
+            'section' => 'social-network-settings',
+            'transport' => 'postMessage'
+        )
+    );
+
+    $wp_customize->add_control(
+        'social-link-2',
+        array(
+            'label'      => 'Social Network Link',
+            'section'    => 'social-network-settings',
+            'type'   => 'url'
+        )
+    );
+
+    //add settings
+    $wp_customize->add_setting(
+        'social-icon-3',
+        array(
+            'section' => 'social-network-settings',
+            'transport' => 'postMessage'
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'social-icon-3',
+            array(
+                'label' => 'Upload social icon',
+                'section' => 'social-network-settings',
+                'settings' => 'social-icon-3'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'social-link-3',
+        array(
+            'section' => 'social-network-settings',
+            'transport' => 'postMessage'
+        )
+    );
+
+    $wp_customize->add_control(
+        'social-link-3',
+        array(
+            'label'      => 'Social Network Link',
+            'section'    => 'social-network-settings',
+            'type'   => 'url'
+        )
+    );
+
+    //add settings
+    $wp_customize->add_setting(
+        'social-icon-4',
+        array(
+            'section' => 'social-network-settings',
+            'transport' => 'postMessage'
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'social-icon-4',
+            array(
+                'label' => 'Upload social icon',
+                'section' => 'social-network-settings',
+                'settings' => 'social-icon-4'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'social-link-4',
+        array(
+            'section' => 'social-network-settings',
+            'transport' => 'postMessage'
+        )
+    );
+
+    $wp_customize->add_control(
+        'social-link-4',
+        array(
+            'label'      => 'Social Network Link',
+            'section'    => 'social-network-settings',
+            'type'   => 'url'
+        )
+    );
+}
 
 
 add_action( 'customize_register', 'course_register_theme_customizer' );

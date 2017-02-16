@@ -893,3 +893,19 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+
+/***********My styles***********/
+.social-list {
+	list-style-type: none;
+}
+
+.social-list li {
+	display: inline-block;
+	margin-left: 5px;
+	transition: opacity .5s ease;
+}
+
+.social-list li:hover {
+	opacity: .7;
+}

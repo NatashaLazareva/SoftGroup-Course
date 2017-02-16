@@ -22,6 +22,12 @@
             </div>
         <?php endif; ?>
 
+        <ul class="social-list">
+            <li class="icon-1"><a href="<?php echo get_theme_mod( 'social-link-1' ); ?>" target="_blank"><img src="<?php echo get_theme_mod('social-icon-1'); ?>" alt=""></a></li>
+            <li class="icon-2"><a href="<?php echo get_theme_mod( 'social-link-2' ); ?>" target="_blank"><img src="<?php echo get_theme_mod('social-icon-2'); ?>" alt=""></a></li>
+            <li class="icon-3"><a href="<?php echo get_theme_mod( 'social-link-3' ); ?>" target="_blank"><img src="<?php echo get_theme_mod('social-icon-3'); ?>" alt=""></a></li>
+            <li class="icon-4"><a href="<?php echo get_theme_mod( 'social-link-4' ); ?>" target="_blank"><img src="<?php echo get_theme_mod('social-icon-4'); ?>" alt=""></a></li>
+        </ul>
 
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'course' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'course' ), 'WordPress' ); ?></a>
